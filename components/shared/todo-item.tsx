@@ -32,7 +32,7 @@ function TodoItem({ todo, onDelete, onEdit, index }: Props) {
 					onChange={e => setEditedText(e.target.value)}
 				/>
 			) : (
-				<span className='font-bold flex gap-2 text-white'>
+				<span className='font-bold flex gap-2 text-white w-[200px] custom-scrollbar   overflow-scroll'>
 					<span className='text-orange-400'>{index + 1})</span>
 					{todo}
 				</span>

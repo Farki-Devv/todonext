@@ -25,6 +25,9 @@ function Page() {
 
 	const handleDeleteTodo = (index: number) => {
 		setData(prevData => prevData.filter((_, idx) => idx !== index))
+		toast({
+			title: 'Deleted todo',
+		})
 	}
 	const handleEditTodo = (index: number, newText: string) => {
 		setData(prevData => {
@@ -32,9 +35,12 @@ function Page() {
 			updatedData[index] = newText
 			return updatedData
 		})
+		toast({
+			title: 'Updated todo',
+		})
 	}
 	return (
-		<div className='w-[1000px] h-[600px] max-md:w-[500px] m-auto bg-white rounded-md mt-2'>
+		<div className='w-[1000px] h-[600px] max-md:w-[400px] max-md:mt-10 m-auto bg-white rounded-md mt-2 overflow-scroll custom-scrollbar'>
 			<div className='flex gap-4 p-4'>
 				<Input
 					className='rounded-full border-none  h-[60px] bg-gray-300 font-bold outline-none text-black'
